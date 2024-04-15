@@ -10,9 +10,6 @@ def call(String k8sCredentialsID, String imageName) {
     withCredentials([file(credentialsId: "${k8sCredentialsID}", variable: 'KUBECONFIG_FILE')]) {
         sh "export KUBECONFIG=\$KUBECONFIG_FILE && kubectl apply -f ."
     }
-    //withKubeConfig(credentialsId: "${k8sCredentialsID}") {
-       // sh "kubectl apply -f ."
-   // }
 }
 
 
