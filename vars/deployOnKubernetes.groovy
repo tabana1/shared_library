@@ -11,7 +11,7 @@ def call(String k8sCredentialsID, String imageName) {
       //   sh "export KUBECONFIG=\$KUBECONFIG_FILE && kubectl apply -f ."
     //}
     withKubeConfig(credentialsId: 'k8sCredentialsID') {
-        sh 'kubectl apply -f your-kubernetes-manifests-directory'
+        sh "kubectl apply -f ."
     }
 }
 
